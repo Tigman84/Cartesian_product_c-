@@ -1,26 +1,23 @@
-# Compiler
 CXX = g++
 
-# Compiler flags
 CXXFLAGS = -std=c++11 -Wall -Wextra
 
-# Source files
-SRCS = main.cpp
+SRCS = cartesian_product.cpp
 
-# Object files
 OBJS = $(SRCS:.cpp=.o)
 
-# Executable name
 TARGET = cartesian_product
 
-# Build rule
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
+.PHONY: all
+all: run
 
-# Compile rule
+.PHONY: run
+run: $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
+	./$(TARGET)
+
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Clean rule
 clean:
 	rm -f $(OBJS) $(TARGET)
