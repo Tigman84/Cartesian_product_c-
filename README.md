@@ -19,10 +19,10 @@ The Cartesian product \( A \times B \) would be:
 
 The C++ program consists of two main functions:
 
-1. `cartesianProduct`: This function calculates the Cartesian product of two sets and returns a vector of pairs representing the ordered pairs.
+1. `cartesian_product`: This function calculates the Cartesian product of two sets and returns a vector of pairs representing the ordered pairs.
    
    ```cpp
-   std::vector<std::pair<T, U>> cartesianProduct(const std::vector<T>& setA, const std::vector<U>& setB) {
+   std::vector<std::pair<T, U>> cartesian_product(const std::vector<T>& setA, const std::vector<U>& setB) {
        std::vector<std::pair<T, U>> result;
        for (typename std::vector<T>::const_iterator itA = setA.begin(); itA != setA.end(); ++itA) {
            for (typename std::vector<U>::const_iterator itB = setB.begin(); itB != setB.end(); ++itB) {
@@ -33,11 +33,11 @@ The C++ program consists of two main functions:
    }
    ```
 
-2. `printPairs`: This function prints the ordered pairs stored in a vector.
+2. `print_pairs`: This function prints the ordered pairs stored in a vector.
    
    ```cpp
    template<typename T, typename U>
-   void printPairs(const std::vector<std::pair<T, U>>& pairs) {
+   void print_pairs(const std::vector<std::pair<T, U>>& pairs) {
        std::cout << "Cartesian product:\n";
        for (typename std::vector<std::pair<T, U>>::const_iterator it = pairs.begin(); it != pairs.end(); ++it) {
            std::cout << "(" << it->first << ", " << it->second << ") ";
@@ -48,13 +48,13 @@ The C++ program consists of two main functions:
 
 ## Usage
 
-To use the program, simply define two sets of any data type and call the `cartesianProduct` function with the sets as arguments. Then, print the resulting pairs using the `printPairs` function.
+To use the program, simply define two sets of any data type and call the `cartesian_product` function with the sets as arguments. Then, print the resulting pairs using the `print_pairs` function.
 
 ```cpp
 std::vector<int> setA = {1, 2, 3};
 std::vector<char> setB = {'a', 'b', 'c'};
-std::vector<std::pair<int, char>> resultPairs = cartesianProduct(setA, setB);
-printPairs(resultPairs);
+std::vector<std::pair<int, char>> result_pairs = cartesian_product(setA, setB);
+print_pairs(result_pairs);
 ```
 
 ---
